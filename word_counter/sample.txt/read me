@@ -1,0 +1,10 @@
+Python is a great programming language for beginners.
+It is easy to read and simple to understand.
+This file is used to test the word counter program.
+The program will open this file and count every word.
+Each line in this file contains a sentence with several words.
+You can add more lines to this file to test larger inputs.
+The word counter splits the text on spaces and newlines.
+It then counts how many words were found in total.
+Try running the program and entering sample.txt as the file name.
+The result should show the total number of words in this file.
