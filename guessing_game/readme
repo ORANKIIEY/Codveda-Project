@@ -1,0 +1,120 @@
+# Number Guessing Game
+
+A beginner-level Python game where the player tries to guess a randomly generated number between 1 and 100. The program gives feedback after every guess until the player wins or runs out of attempts.
+
+---
+
+## Features
+
+- Randomly generates a number between 1 and 100 each game
+- Gives feedback after every guess: Too high, Too low, or Correct
+- Allows up to 7 attempts per game
+- Validates input — rejects letters, symbols, and out-of-range numbers
+- Shows remaining attempts after each guess
+- Reveals the secret number if the player loses
+
+---
+
+## Requirements
+
+- Python 3.x (no external libraries needed)
+
+---
+
+## How to Run
+
+```bash
+python guessing_game.py
+```
+
+---
+
+## Example Output
+
+**Winning:**
+```
+Welcome! I am thinking of a number between 1 and 100.
+You have 7 attempts.
+
+Attempt 1/7 - Your guess: 50
+Too low! 6 attempts remaining.
+
+Attempt 2/7 - Your guess: 75
+Too high! 5 attempts remaining.
+
+Attempt 3/7 - Your guess: 63
+Too low! 4 attempts remaining.
+
+Attempt 4/7 - Your guess: 69
+
+Correct! The number was 69.
+You got it in 4 attempts!
+```
+
+**Losing:**
+```
+Welcome! I am thinking of a number between 1 and 100.
+You have 7 attempts.
+
+...
+
+Game over! The number was 42. Better luck next time!
+```
+
+**Invalid input:**
+```
+Attempt 1/7 - Your guess: abc
+Please enter a valid number.
+
+Attempt 1/7 - Your guess: 150
+Please guess between 1 and 100.
+```
+
+---
+
+## How It Works
+
+| Step | Code Used | Purpose |
+|------|-----------|---------|
+| Generate number | `random.randint(1, 100)` | Picks a random secret number |
+| Get input | `input()` | Asks the player for a guess |
+| Validate input | `guess_input.isdigit()` | Checks the input is a number |
+| Check range | `guess < 1 or guess > 100` | Ensures guess is between 1 and 100 |
+| Give feedback | `if / elif / else` | Tells player if guess is too high or too low |
+| Track attempts | `attempts + 1` | Counts how many guesses have been used |
+
+---
+
+## Error Handling
+
+| Situation | Message Shown |
+|-----------|---------------|
+| Input is not a number | Please enter a valid number. |
+| Number is out of range | Please guess between 1 and 100. |
+| Player guesses correctly | Correct! The number was X. |
+| Player runs out of attempts | Game over! The number was X. |
+
+---
+
+## Project Structure
+
+```
+task-1-number-guessing-game/
+│
+├── guessing_game.py    # Main program
+└── README.md           # Project documentation
+```
+
+---
+
+## Tips
+
+- Start with **50** to cut the range in half
+- Each guess should eliminate half the remaining numbers
+- With perfect guessing strategy you can always win within 7 attempts
+
+---
+
+## License
+
+This project is open source and free to use for educational and learning purposes.
